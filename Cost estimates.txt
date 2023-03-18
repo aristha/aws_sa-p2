@@ -1,0 +1,10 @@
+Cost estimates
+Initial cost estimate - 9,404.33 USD / month
+Reduced estimate - 6,496.30 USD / month
+Reduced instance size of web and app servers to t3.medium, and increased the limit of autoscaling group. Performance will be affected, but this will allow for more granular autoscaling
+Reduced the instance size of RDS postgres instances.
+Used 1 year standard reserved instances for servers and RDS. This makes sense since we won't be re-architecting the app much.
+Increased estimate - 19,694.38 USD / month
+Added a secondary region for more redundancy and better performance. Web and app servers are of same type in both regions, but the secondary region only has a Multi-AZ read replica which is updated from the primary main DB.
+Increased server instance sizes for better performance
+Servers in secondary region can write to the primary main DB through VPC peering
